@@ -18,3 +18,11 @@ server.use(router);
 server.listen(3000, () => {
     console.log("JSON Server is running");
 });
+
+// Logic to save the new item
+server.post("/api/todos", (req, res) => {
+    const { label } = req.body;
+    const newTodo = { id: Date.now(), label, isDone: false };
+    todos.push(newTodo);
+    res.status(201).json(newTodo);
+});
