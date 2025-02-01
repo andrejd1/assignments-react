@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Layout = styled.main`
+export const StyledLayout = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -11,7 +11,10 @@ export const Layout = styled.main`
     padding: 20px;
 
     background-color: rgb(255, 255, 255);
-    border: 1px solid;
-    border-color: ${(props) => props.theme.colors.olive6};
+    border: 1px solid ${(props) => props.theme.colors.olive6};
     border-radius: 5px;
+`;
+
+export const StyledContent = styled.main`
+    flex: 1;
 `;
