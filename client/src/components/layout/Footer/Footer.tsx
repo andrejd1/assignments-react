@@ -1,13 +1,17 @@
 import React from "react";
 import { FooterProps } from "./FooterProps";
-import { FooterStyled } from "./StyledFooter";
+import { FooterItem, FooterStyled } from "./StyledFooter";
 
 export const Footer = ({ todoItems, doneItems }: FooterProps) => {
     
     return (
         <FooterStyled>
-            Todo: {todoItems}
-            Done: {doneItems}
+            <FooterItem>
+                Todo: {todoItems ?? 0}
+            </FooterItem>
+            <FooterItem>
+                Done: {doneItems ?? 0}
+            </FooterItem>
         </FooterStyled>
     );
 };
