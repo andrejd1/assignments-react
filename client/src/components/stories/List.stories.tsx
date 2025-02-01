@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { List } from "../todo/List/List";
-import { ListItem, LiteeItemProp } from "../todo/ListItem/ListItem";
+import { ListItemProps } from "../todo/ListItem/ListItemProps";
 
 const meta = {
     title: "List",
@@ -10,9 +10,9 @@ const meta = {
 } as Meta<typeof List>;
 export default meta;
 
-type Story = StoryObj<typeof ListItem>;
+type Story = StoryObj<typeof List>;
 
-const emptyHandlers: Pick<LiteeItemProp, "onItemLabelEdit" | "onItemDoneToggle" | "onItemDelete"> = {
+const emptyHandlers: Pick<ListItemProps, "onItemLabelEdit" | "onItemDoneToggle" | "onItemDelete"> = {
     onItemLabelEdit: action("Edit requested"),
     onItemDoneToggle: action("Done state change requested"),
     onItemDelete: action("Removal requested"),
@@ -20,10 +20,10 @@ const emptyHandlers: Pick<LiteeItemProp, "onItemLabelEdit" | "onItemDoneToggle" 
 
 export const WithItems: Story = {
     args: {
-        children: [
-            <ListItem {...emptyHandlers} label={"Lorem ipsum dolor"} isDone={false} />,
-            <ListItem {...emptyHandlers} label={"Nullam Adipiscing Ridiculus Fusce"} isDone={false} />,
-            <ListItem {...emptyHandlers} label={"Mattis Tristique Parturient "} isDone={true} />,
+        todoItems: [
+            { id: 1, label: "Lorem ipsum dolor", isDone: false, ...emptyHandlers },
+            { id: 2, label: "Nullam Adipiscing Ridiculus Fusce", isDone: false, ...emptyHandlers },
+            { id: 3, label: "Mattis Tristique Parturient", isDone: true, ...emptyHandlers },
         ],
     },
 };

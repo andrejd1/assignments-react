@@ -5,18 +5,16 @@ import { Checkbox } from "../../common/Checkbox";
 import { StyledListItem, StyledListItemLabel } from "./StyledListItem";
 import { ListItemProps } from "./ListItemProps";
 
-
-export const ListItem = ({ label, isDone, onItemLabelEdit, onItemDoneToggle, onItemDelete }: ListItemProps) => {
-    
+export const ListItem = ({ label, isDone, onItemDoneToggle, onItemDelete }: ListItemProps) => {
     return (
         <StyledListItem>
             <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />
             <StyledListItemLabel>{label}</StyledListItemLabel>
             <button>
-                <TrashIcon />
+                <Pencil1Icon />
             </button>
             <button onClick={() => onItemDelete()}>
-                <Pencil1Icon />
+                <TrashIcon />
             </button>
         </StyledListItem>
     );

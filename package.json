@@ -4,5 +4,10 @@
     "private": true,
     "version": "1.0.0",
     "packageManager": "pnpm@8.15.6",
-    "scripts": {}
+    "scripts": {
+        "dev": "concurrently \"cd client && npm run dev\" \"cd server && pnpm dev\""
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2"
+    }
 }

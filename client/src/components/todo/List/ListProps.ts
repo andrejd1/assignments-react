@@ -1,5 +1,5 @@
-import React from "react";
+import { ListItemProps } from "../ListItem/ListItemProps";
 
 export type ListProps = {
-    children?: React.ReactNode;
+    todoItems: ListItemProps[];
 };
