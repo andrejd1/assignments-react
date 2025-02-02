@@ -1,6 +1,4 @@
-import React from "react";
-
 export type HeaderProps = {
-    children: React.ReactNode;
+    title: string;
     onItemAdd: (label: string) => void;
 };

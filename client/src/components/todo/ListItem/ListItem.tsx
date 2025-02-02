@@ -3,9 +3,9 @@ import React from "react";
 
 import { Checkbox } from "../../common/Checkbox";
 import { StyledListItem, StyledListItemLabel } from "./StyledListItem";
-import { ListItemProps } from "./ListItemProps";
+import { ListItemType } from "./ListItemType";
 
-export const ListItem = ({ label, isDone, onItemDoneToggle, onItemDelete }: ListItemProps) => {
+export const ListItem = ({ label, isDone, onItemDoneToggle, onItemDelete }: ListItemType) => {
     return (
         <StyledListItem>
             <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />

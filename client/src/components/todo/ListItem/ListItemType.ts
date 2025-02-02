@@ -1,4 +1,4 @@
-export type ListItemProps = {
+export type ListItemType = {
     id: number;
     createdAt?: number;
     label: string;

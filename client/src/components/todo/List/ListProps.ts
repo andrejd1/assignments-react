@@ -1,5 +1,5 @@
-import { ListItemProps } from "../ListItem/ListItemProps";
+import { ListItemType } from "../ListItem/ListItemType";
 
 export type ListProps = {
-    todoItems: ListItemProps[];
+    todoItems: ListItemType[];
 };
