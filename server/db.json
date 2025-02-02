@@ -62,9 +62,10 @@
     },
     {
       "label": "itemeček",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1738494458513,
-      "id": 11
+      "id": 11,
+      "finishedAt": 1738537691276
     },
     {
       "label": "Testík",
@@ -80,9 +81,10 @@
     },
     {
       "label": "ajaj",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1738495088921,
-      "id": 14
+      "id": 14,
+      "finishedAt": 1738537668023
     },
     {
       "label": "ajejeje",

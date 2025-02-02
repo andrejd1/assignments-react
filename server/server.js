@@ -37,6 +37,10 @@ server.put("/api/todos/:id", (req, res) => {
         todo.label = label;
     } else if (isDone !== undefined) {
         todo.isDone = isDone;
+
+        if (isDone) {
+            todo.finishedAt = Date.now();
+        }
     } else {
         return res.status(400).json({ message: "No valid fields to update" });
     }
