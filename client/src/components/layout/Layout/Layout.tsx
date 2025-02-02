@@ -5,9 +5,8 @@ import { StyledContent, StyledLayout } from "./StyledLayout";
 import { LayoutProps } from "./LayoutProps";
 import { mutate } from "swr";
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children, todoItems, doneItems }: LayoutProps) => {
     const handleAdd = async (label: string) => {
-        // await fetch(`${import.meta.env.VITE_API_URL}/api/todos`, {
         await fetch("http://localhost:3000/api/todos", {
             method: "POST",
             headers: {
@@ -22,7 +21,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <StyledLayout>
             <Header onItemAdd={handleAdd} title={"To Do app"} />
             <StyledContent>{children}</StyledContent>
-            <Footer />
+            <Footer todoItems={todoItems} doneItems={doneItems} />
         </StyledLayout>
     );
 };

@@ -6,6 +6,7 @@ import { useTodoItems } from "./hooks/useTodoItems";
 
 export const App = () => {
     const { todoItems, isError, isLoading } = useTodoItems();
+    const doneItems = todoItems.filter((item) => item.isDone).length;
 
     let content;
     if (isLoading) {
@@ -19,7 +20,9 @@ export const App = () => {
     return (
         <ThemeProvider>
             <Container>
-                <Layout>{content}</Layout>
+                <Layout todoItems={todoItems.length} doneItems={doneItems}>
+                    {content}
+                </Layout>
             </Container>
         </ThemeProvider>
     );

@@ -1,5 +1,7 @@
 import React from "react";
 
-export type LayoutProps = {
+export interface LayoutProps {
     children: React.ReactNode;
+    todoItems: number;
+    doneItems: number;
 }

@@ -8,7 +8,7 @@
     },
     {
       "label": "Parturient Fusce Ipsum Ultricies Mollis",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1666874857611,
       "id": 2
     },
@@ -32,7 +32,7 @@
     },
     {
       "label": "Testování",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1738493344986,
       "id": 6
     },
@@ -44,7 +44,7 @@
     },
     {
       "label": "Ach jo",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1738493726604,
       "id": 8
     },
@@ -56,7 +56,7 @@
     },
     {
       "label": "co to je?",
-      "isDone": true,
+      "isDone": false,
       "createdAt": 1738493772040,
       "id": 10
     },
@@ -68,7 +68,7 @@
     },
     {
       "label": "Testík",
-      "isDone": true,
+      "isDone": false,
       "createdAt": 1738494958777,
       "id": 12
     },
