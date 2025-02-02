@@ -27,10 +27,10 @@ export const ListItem = ({ id, label, isDone, onItemLabelEdit, onItemDoneToggle,
                 </StyledListItemLabel>
             </StyledListContainer>
             <StyledListButtonContainer>
-                <Button onClick={() => setIsEditing(true)}>
+                <Button variant={"edit"} onClick={() => setIsEditing(true)}>
                     <Pencil1Icon />
                 </Button>
-                <Button onClick={() => onItemDelete(id)}>
+                <Button variant={"delete"} onClick={() => onItemDelete(id)}>
                     <TrashIcon />
                 </Button>
             </StyledListButtonContainer>

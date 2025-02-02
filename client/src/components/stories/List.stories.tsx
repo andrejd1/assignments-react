@@ -5,7 +5,7 @@ import { List } from "../todo/List/List";
 import { ListItemType } from "../todo/ListItem/ListItemType";
 
 const meta = {
-    title: "List",
+    title: "List/List",
     component: List,
 } as Meta<typeof List>;
 export default meta;
@@ -21,9 +21,15 @@ const emptyHandlers: Pick<ListItemType, "onItemLabelEdit" | "onItemDoneToggle" |
 export const WithItems: Story = {
     args: {
         todoItems: [
-            { id: 1, label: "Lorem ipsum dolor", isDone: false, ...emptyHandlers },
-            { id: 2, label: "Nullam Adipiscing Ridiculus Fusce", isDone: false, ...emptyHandlers },
-            { id: 3, label: "Mattis Tristique Parturient", isDone: true, ...emptyHandlers },
+            { id: 1, label: "Lorem ipsum dolor", isDone: false, ...emptyHandlers, createdAt: 177888555 },
+            {
+                id: 2,
+                label: "Nullam Adipiscing Ridiculus Fusce",
+                isDone: false,
+                ...emptyHandlers,
+                createdAt: 177888555,
+            },
+            { id: 3, label: "Mattis Tristique Parturient", isDone: true, ...emptyHandlers, createdAt: 177888555 },
         ],
     },
 };

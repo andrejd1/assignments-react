@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { ListItem } from "../todo/ListItem/ListItem";
 
 const meta = {
-    title: "List Item",
+    title: "List/List Item",
     component: ListItem,
     argTypes: {
         onItemDelete: { action: "removed" },
