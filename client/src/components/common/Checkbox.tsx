@@ -10,7 +10,7 @@ const CheckboxStyled = styled(CheckboxPrimitive.Root)`
     align-items: center;
     justify-content: center;
 
-    width: 25px;
+    min-width: 25px;
     height: 25px;
 
     background-color: white;

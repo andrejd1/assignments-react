@@ -32,9 +32,17 @@ server.put("/api/todos/:id", (req, res) => {
     if (!todo) {
         return res.status(404).json({ message: "Item not found" });
     }
-    const updatedTodo = { ...todo, label, isDone };
-    router.db.get("items").find({ id: parseInt(id) }).assign(updatedTodo).write();
-    res.json(updatedTodo);
+
+    if (label !== undefined) {
+        todo.label = label;
+    } else if (isDone !== undefined) {
+        todo.isDone = isDone;
+    } else {
+        return res.status(400).json({ message: "No valid fields to update" });
+    }
+
+    router.db.get("items").find({ id: parseInt(id) }).assign(todo).write();
+    res.json(todo);
 });
 
 // Use default router
