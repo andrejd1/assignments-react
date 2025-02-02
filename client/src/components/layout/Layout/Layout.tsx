@@ -3,10 +3,9 @@ import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { StyledContent, StyledLayout } from "./StyledLayout";
 import { LayoutProps } from "./LayoutProps";
-import { useSWRConfig } from "swr";
+import { mutate } from "swr";
 
 export const Layout = ({ children }: LayoutProps) => {
-    const { mutate } = useSWRConfig();
     const handleAdd = async (label: string) => {
         // await fetch(`${import.meta.env.VITE_API_URL}/api/todos`, {
         await fetch("http://localhost:3000/api/todos", {

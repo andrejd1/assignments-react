@@ -24,6 +24,8 @@ export const Form = (props: FormProps) => {
             onSubmit={(e) => {
                 e.preventDefault();
                 onSubmit(inputValue);
+                setInputValue("");
+                onCancel();
             }}
             onReset={() => {
                 onCancel();

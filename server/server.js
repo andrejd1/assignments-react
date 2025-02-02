@@ -24,6 +24,19 @@ server.post("/api/todos", (req, res) => {
     res.status(201).json(newTodo);
 });
 
+// Logic to edit the item
+server.put("/api/todos/:id", (req, res) => {
+    const { id } = req.params;
+    const { label, isDone } = req.body;
+    const todo = router.db.get("items").find({ id: parseInt(id) }).value();
+    if (!todo) {
+        return res.status(404).json({ message: "Item not found" });
+    }
+    const updatedTodo = { ...todo, label, isDone };
+    router.db.get("items").find({ id: parseInt(id) }).assign(updatedTodo).write();
+    res.json(updatedTodo);
+});
+
 // Use default router
 server.use(router);
 server.listen(3000, () => {
