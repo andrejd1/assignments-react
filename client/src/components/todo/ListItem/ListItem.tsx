@@ -5,40 +5,21 @@ import { Checkbox } from "../../common/Checkbox";
 import { StyledListButtonContainer, StyledListContainer, StyledListItem, StyledListItemLabel } from "./StyledListItem";
 import { ListItemType } from "./ListItemType";
 import { Form } from "../../form";
-import { mutate } from "swr";
 
-export const ListItem = ({ id, label, isDone, onItemDelete }: ListItemType) => {
+export const ListItem = ({ id, label, isDone, onItemLabelEdit, onItemDoneToggle, onItemDelete }: ListItemType) => {
     const [isEditing, setIsEditing] = useState(false);
-
-    const handleEdit = async (label: string) => {
-        await fetch(`http://localhost:3000/api/todos/${id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ label }),
-        });
-        await mutate("/api/items");
-    };
-
-    const onItemDoneToggle = async () => {
-        await fetch(`http://localhost:3000/api/todos/${id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ isDone: !isDone }),
-        });
-        await mutate("/api/items");
-    };
 
     return (
         <StyledListItem>
             <StyledListContainer>
-                <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />
+                <Checkbox checked={isDone} onCheckedChange={(isChecked) => onItemDoneToggle(Boolean(isChecked), id)} />
                 <StyledListItemLabel>
                     {isEditing ? (
-                        <Form initialValue={label} onSubmit={handleEdit} onCancel={() => setIsEditing(false)} />
+                        <Form
+                            initialValue={label}
+                            onSubmit={(label) => onItemLabelEdit(label, id)}
+                            onCancel={() => setIsEditing(false)}
+                        />
                     ) : (
                         label
                     )}
@@ -48,7 +29,7 @@ export const ListItem = ({ id, label, isDone, onItemDelete }: ListItemType) => {
                 <button onClick={() => setIsEditing(true)}>
                     <Pencil1Icon />
                 </button>
-                <button onClick={() => onItemDelete()}>
+                <button onClick={() => onItemDelete(id)}>
                     <TrashIcon />
                 </button>
             </StyledListButtonContainer>

@@ -45,6 +45,18 @@ server.put("/api/todos/:id", (req, res) => {
     res.json(todo);
 });
 
+// Logic to delete the item
+server.delete("/api/todos/:id", (req, res) => {
+    const { id } = req.params;
+    const todo = router.db.get("items").find({ id: parseInt(id) }).value();
+    if (!todo) {
+        return res.status(404).json({ message: "Item not found" });
+    }
+
+    router.db.get("items").remove({ id: parseInt(id) }).write();
+    res.status(204).end();
+});
+
 // Use default router
 server.use(router);
 server.listen(3000, () => {

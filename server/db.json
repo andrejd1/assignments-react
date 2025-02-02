@@ -38,7 +38,7 @@
     },
     {
       "label": "rerender",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1738493419080,
       "id": 7
     },
@@ -56,7 +56,7 @@
     },
     {
       "label": "co to je?",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1738493772040,
       "id": 10
     },
@@ -68,7 +68,7 @@
     },
     {
       "label": "Testík",
-      "isDone": false,
+      "isDone": true,
       "createdAt": 1738494958777,
       "id": 12
     },
@@ -97,18 +97,6 @@
       "id": 16
     },
     {
-      "label": "Tak co?",
-      "isDone": false,
-      "createdAt": 1738524602697,
-      "id": 17
-    },
-    {
-      "label": "Done",
-      "isDone": false,
-      "createdAt": 1738524780255,
-      "id": 18
-    },
-    {
       "label": "Sezame otevři se",
       "createdAt": 1738524810470,
       "id": 19,
@@ -118,7 +106,7 @@
       "isDone": true,
       "createdAt": 1738527781962,
       "id": 20,
-      "label": "Jojojojojojojo"
+      "label": "Jojojojojojojo co je?"
     }
   ]
 }
