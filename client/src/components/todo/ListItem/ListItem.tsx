@@ -5,6 +5,7 @@ import { Checkbox } from "../../common/Checkbox";
 import { StyledListButtonContainer, StyledListContainer, StyledListItem, StyledListItemLabel } from "./StyledListItem";
 import { ListItemType } from "./ListItemType";
 import { Form } from "../../form";
+import { Button } from "../../common/Button";
 
 export const ListItem = ({ id, label, isDone, onItemLabelEdit, onItemDoneToggle, onItemDelete }: ListItemType) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -26,12 +27,12 @@ export const ListItem = ({ id, label, isDone, onItemLabelEdit, onItemDoneToggle,
                 </StyledListItemLabel>
             </StyledListContainer>
             <StyledListButtonContainer>
-                <button onClick={() => setIsEditing(true)}>
+                <Button onClick={() => setIsEditing(true)}>
                     <Pencil1Icon />
-                </button>
-                <button onClick={() => onItemDelete(id)}>
+                </Button>
+                <Button onClick={() => onItemDelete(id)}>
                     <TrashIcon />
-                </button>
+                </Button>
             </StyledListButtonContainer>
         </StyledListItem>
     );
