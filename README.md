@@ -37,61 +37,61 @@ Using the provided UI components, implement the following modifications, bugfixe
 
 #### Bugs
 
--   [ ] **B1**: `List` content
+-   [x] **B1**: `List` content
     -   Fix the content alignment of the non-empty `List` component.
--   [ ] **B2**: `Footer` alignment
+-   [x] **B2**: `Footer` alignment
     -   Fix the `Layout` component so the `Footer` is always attached to the bottom of the `Layout`.
 
 _Fix all other bugs and visual imperfections you find._
 
 #### Features
 
--   [ ] **F1**: Default values in `Footer`
+-   [x] **F1**: Default values in `Footer`
     -   Modify the counters in `Footer` to show 0 when no value(s) are passed.
--   [ ] **F2**: Load todo items
+-   [x] **F2**: Load todo items
     -   After opening the application, todo items should be loaded from the server
     -   The todo items should be displayed in the `List` component.
--   [ ] **F3**: Add a todo item
+-   [x] **F3**: Add a todo item
     -   Implement logic, which toggles visibility between the "add" button in the `Header` and a `Form` component.
     -   Entering a value inside the `Form` component and submitting it should create a new todo item.
     -   Data should be persisted on the server via an API call.
--   [ ] **F4**: Edit a todo item's label
+-   [x] **F4**: Edit a todo item's label
     -   Implement logic, which toggles visibility between the "edit" button in the `ListItem` and a `Form` component.
     -   Entering a value inside the `Form` component and submitting it should edit the existing todo item.
     -   Changes to the data should be persisted on the server via an API call.
--   [ ] **F5**: Complete a todo item
+-   [x] **F5**: Complete a todo item
     -   After clicking on the checkbox in the `ListItem`, the todo item should toggle between "done" and "todo" states.
     -   Changes to the data should be persisted on the server via an API call.
--   [ ] **F6**: Delete a todo item
+-   [x] **F6**: Delete a todo item
     -   After clicking the "delete" button in the `ListItem`, the todo item should be deleted.
     -   Changes to the data should be persisted on the server via an API call.
--   [ ] **F7**: Sort the todo items
+-   [x] **F7**: Sort the todo items
     -   Sort the list of the todo items:
         -   "todo" items (not "done") should be displayed first,
         -   after that, items should be sorted by their creation date, descending.
--   [ ] **F8**: Count the todo items
+-   [x] **F8**: Count the todo items
     -   Show a number of the "todo"/"done" items in the `Footer`.
--   [ ] **F9**: `Button` component
+-   [x] **F9**: `Button` component
     -   Create a `Button` component and use it instead of HTML `button` elements.
 
 #### Styling
 
--   [ ] **UI1**: `Header` "add" button alignment
+-   [x] **UI1**: `Header` "add" button alignment
     -   The "add" button should be aligned to the right in the `Header` component.
--   [ ] **UI2**: `ListItem` actions alignment
+-   [x] **UI2**: `ListItem` actions alignment
     -   Action buttons in the `ListItem` component should be aligned to the right.
--   [ ] **UI3**: `ListItem` actions visibility
+-   [x] **UI3**: `ListItem` actions visibility
     -   Action buttons in the `ListItem` component should be visible only when hovering over the `ListItem`.
 
 #### Stories (optional tasks)
 
--   [ ] **SB1**: Add a story/stories for the `Layout` component.
--   [ ] **SB2**: Add stories showing available `Button` variants.
--   [ ] **SB3**: Add a story showcasing the `ListItem` actions visibility change on hover (implemented in _"UI3"_).
+-   [x] **SB1**: Add a story/stories for the `Layout` component.
+-   [x] **SB2**: Add stories showing available `Button` variants.
+-   [x] **SB3**: Add a story showcasing the `ListItem` actions visibility change on hover (implemented in _"UI3"_).
 
 ### Server
 
--   [ ] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
+-   [x] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
 
 ## Additional Comments
 
@@ -106,3 +106,10 @@ _Fix all other bugs and visual imperfections you find._
 ### Storybook
 
 -   We use the Storybook's format CSF3, but you can use the older version of the CSF format if you are more familiar with it.
+
+## Footnotes
+-  I tried to introduce .env file to store the API URL, but I couldn't make it work. So, I commented it out. I just want to let you know
+- I spent almost 5 hours on this assignment. Here is my toggl link with my time documented https://track.toggl.com/shared-report/e7484c68b319ca35a4159725e6f69874.
+I hope you like it. Thank you for the opportunity.
+- I also add a script to run the server and client at the same time. It is in the package.json located in the root of the project. You can run `npm run dev` to start both the server and the client.
+- Github link: https://github.com/andrejd1/assignments-react
